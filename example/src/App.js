@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-make-store'
-import 'react-make-store/dist/index.css'
+import Title from './components/Title'
+import ColorField from './components/ColorField'
+import StyleBox from './components/StyleBox'
+import Form from './components/Form'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <StyleBox display="grid" placeItems="center" gridGap="20px" >
+    <Title/>
+    <ColorField />
+    <Form/>
+  </StyleBox>
 }
 
 export default App
