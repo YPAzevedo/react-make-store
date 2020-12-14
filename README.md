@@ -119,7 +119,7 @@ const stores = makeStore();
 const formStore = stores.create("form", { favoriteAnimal: "🐈", favoriteColor: "yellow" })
 
 function App() {
-  const [isCatPerson] = useSliceOfStore(formStore, "favoriteAnimal", (favoriteAnimalValue) => favoriteAnimalValue === "🐈")
+  const [isCatPerson] = useDeriveFromSlice(formStore, "favoriteAnimal", (favoriteAnimalValue) => favoriteAnimalValue === "🐈")
 
   return <span>{isCatPerson ? "❌" : "✅"}</span>
 }
