@@ -13,15 +13,18 @@ npm install --save react-make-store
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react';
 
-import MyComponent from 'react-make-store'
-import 'react-make-store/dist/index.css'
+import makeStore, { useStore } from 'react-make-store';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const stores = makeStore();
+
+const nameStore = stores.create("name", "John Doe")
+
+function App() {
+  const [name, update] = useStore(nameStore)
+
+  return <div>{name}</div>
 }
 ```
 
